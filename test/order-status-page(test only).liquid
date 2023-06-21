@@ -1,0 +1,30 @@
+{% assign subscription_order = false %}
+{% for line in subtotal_line_items %}
+    {% if line.product.title contains "Subscription"%}
+        {% assign subscription_order = true %}
+    {% endif %}
+    {% if line.product.id == 8380120105273 %}
+    {% comment %} ELEVATE Brain Retraining 2.0 Subscription {% endcomment %}
+        {% assign MN_ID = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
+    {% else if line.product.id == 8390337593657 %}
+    {% comment %} Regulation Station Subscription {% endcomment %}
+        {% assign MN_ID = "https://myvitalside.mn.co/share/21_wYCREoQRPH4Zl?utm_source=manual" %}
+    {% else if line.product.id == 8390337462585 %}
+    {% comment %} Reset, A 7-Day Brain Retraining Course Subscription {% endcomment %}
+        {% assign MN_ID = "https://myvitalside.mn.co/share/2MH0VJGGIfZjIJ_K?utm_source=manual" %}
+    {% else if line.product.id == 8390337233209 %}
+    {% comment %} Rewire, The Vital-Side Membership Subscription {% endcomment %}
+        {% assign MN_ID = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
+    {% else if line.product.id == 8390337921337 %}
+    {% comment %} Vital-Side Ed Subscription {% endcomment %}
+        {% assign MN_ID = "https://myvitalside.mn.co/share/7nIZ5_fcRntszBma?utm_source=manual" %}
+    {% else if line.product.id == 8390337069369 %}
+    {% comment %} Reboot Subscription {% endcomment %}
+        {% assign MN_ID = "https://myvitalside.mn.co/share/5EDyjmFlubnQZFSj?utm_source=manual" %}
+    {% endif %}
+{% endfor %}
+{% if subscription_order == true %}
+<p style="color:#777;line-height:150%;font-size: 20px;margin:0;margin-top: 20px;margin-bottom: 20px;">Please complete the following two steps to get started!</p>
+                <p style="color:#777;line-height:150%;font-size: 20px;margin:0;margin-bottom: 20px;">Step 1: Create your account to manage your Vital-Side subscriptions here: <a href="https://vital-side.com/account" style="font-size:20px;" target="_blank">My Account</a> </p>
+                <p style="color:#777;line-height:150%;font-size: 20px;margin:0">Step 2: Create your login to access your Vital-Side courses here: <a href="{{MN_ID}}" style="font-size:20px;" target="_blank">Vital-Side Network</a></p>
+{% endif %}
