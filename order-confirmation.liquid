@@ -160,22 +160,27 @@ We're getting your order ready to be shipped. We will notify you when it has bee
                     {% endif %}
                     {% if line.product.id == 7645508599958 %}
                     {% comment %} ELEVATE Brain Retraining 2.0 Subscription {% endcomment %}
-                      {% assign MN_ID = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
-                    {% else if line.product.id == 7650481701014 %}
+                        {% assign MN_ID = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
+                    {% endif %}
+                    {% if line.product.id == 7650481701014 %}
                     {% comment %} Regulation Station Subscription {% endcomment %}
-                      {% assign MN_ID = "https://myvitalside.mn.co/share/21_wYCREoQRPH4Zl?utm_source=manual" %}
-                    {% else if line.product.id == 7650501755030 %}
+                        {% assign MN_ID = "https://myvitalside.mn.co/share/21_wYCREoQRPH4Zl?utm_source=manual" %}
+                    {% endif %}
+                    {% if line.product.id == 7650501755030 %}
                     {% comment %} Reset, A 7-Day Brain Retraining Course Subscription {% endcomment %}
-                      {% assign MN_ID = "https://myvitalside.mn.co/share/2MH0VJGGIfZjIJ_K?utm_source=manual" %}
-                    {% else if line.product.id == 7647884738710 %}
+                        {% assign MN_ID = "https://myvitalside.mn.co/share/2MH0VJGGIfZjIJ_K?utm_source=manual" %}
+                    {% endif %}
+                    {% if line.product.id == 7647884738710 %}
                     {% comment %} Rewire, The Vital-Side Membership Subscription {% endcomment %}
-                      {% assign MN_ID = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
-                    {% else if line.product.id == 4690053300355 %}
+                        {% assign MN_ID = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
+                    {% endif %}
+                    {% if line.product.id == 4690053300355 %}
                     {% comment %} Vital-Side Ed Subscription {% endcomment %}
-                      {% assign MN_ID = "https://myvitalside.mn.co/share/7nIZ5_fcRntszBma?utm_source=manual" %}
-                    {% else if line.product.id == 7752693350550 %}
+                        {% assign MN_ID = "https://myvitalside.mn.co/share/7nIZ5_fcRntszBma?utm_source=manual" %}
+                    {% endif %}
+                    {% if line.product.id == 7752693350550 %}
                     {% comment %} Reboot Subscription {% endcomment %}
-                      {% assign MN_ID = "https://myvitalside.mn.co/share/5EDyjmFlubnQZFSj?utm_source=manual" %}
+                        {% assign MN_ID = "https://myvitalside.mn.co/share/5EDyjmFlubnQZFSj?utm_source=manual" %}
                     {% endif %}
                 {% endfor %}
                 {% if subscription_order == true %}
