@@ -1,35 +1,60 @@
 {% assign subscription_order = false %}
+{% assign MN_ELEVATE = '' %}
+{% assign MN_Regulation = '' %}
+{% assign MN_Reset = '' %}
+{% assign MN_Rewire = '' %}
+{% assign MN_VitalSide = '' %}
+{% assign MN_Reboot = '' %}
+
 {% for line in subtotal_line_items %}
     {% if line.product.title contains "Subscription"%}
         {% assign subscription_order = true %}
     {% endif %}
     {% if line.product.id == 7645508599958 %}
     {% comment %} ELEVATE Brain Retraining 2.0 Subscription {% endcomment %}
-        {% assign MN_ID = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
+        {% assign MN_ELEVATE = "https://myvitalside.mn.co/share/apny8HjQE66DTKgG?utm_source=manual" %}
     {% endif %}
     {% if line.product.id == 7650481701014 %}
     {% comment %} Regulation Station Subscription {% endcomment %}
-        {% assign MN_ID = "https://myvitalside.mn.co/share/21_wYCREoQRPH4Zl?utm_source=manual" %}
+        {% assign MN_Regulation = "https://myvitalside.mn.co/share/21_wYCREoQRPH4Zl?utm_source=manual" %}
     {% endif %}
     {% if line.product.id == 7650501755030 %}
     {% comment %} Reset, A 7-Day Brain Retraining Course Subscription {% endcomment %}
-        {% assign MN_ID = "https://myvitalside.mn.co/share/2MH0VJGGIfZjIJ_K?utm_source=manual" %}
+        {% assign MN_Reset = "https://myvitalside.mn.co/share/2MH0VJGGIfZjIJ_K?utm_source=manual" %}
     {% endif %}
     {% if line.product.id == 7647884738710 %}
     {% comment %} Rewire, The Vital-Side Membership Subscription {% endcomment %}
-        {% assign MN_ID = "https://myvitalside.mn.co/share/jCrBg5_VV77ASE5F?utm_source=manual" %}
+        {% assign MN_Rewire = "https://myvitalside.mn.co/share/jCrBg5_VV77ASE5F?utm_source=manual" %}
     {% endif %}
     {% if line.product.id == 4690053300355 %}
     {% comment %} Vital-Side Ed Subscription {% endcomment %}
-        {% assign MN_ID = "https://myvitalside.mn.co/share/7nIZ5_fcRntszBma?utm_source=manual" %}
+        {% assign MN_VitalSide = "https://myvitalside.mn.co/share/7nIZ5_fcRntszBma?utm_source=manual" %}
     {% endif %}
     {% if line.product.id == 7752693350550 %}
     {% comment %} Reboot Subscription {% endcomment %}
-        {% assign MN_ID = "https://myvitalside.mn.co/share/5EDyjmFlubnQZFSj?utm_source=manual" %}
+        {% assign MN_Reboot = "https://myvitalside.mn.co/share/5EDyjmFlubnQZFSj?utm_source=manual" %}
     {% endif %}
 {% endfor %}
 {% if subscription_order == true %}
-<p style="color:#777;line-height:150%;font-size: 20px;margin:0;margin-top: 20px;margin-bottom: 20px;">Please complete the following two steps to get started!</p>
-<p style="color:#777;line-height:150%;font-size: 20px;margin:0;margin-bottom: 20px;">Step 1: Create your account to manage your Vital-Side subscriptions here: <a href="https://vital-side.com/account" style="font-size:20px;" target="_blank">My Account</a> </p>
-<p style="color:#777;line-height:150%;font-size: 20px;margin:0">Step 2: Create your login to access your Vital-Side courses here: <a href="{{MN_ID}}" style="font-size:20px;" target="_blank">Vital-Side Network</a></p>
+    <p style="color:#777;line-height:150%;font-size: 20px;margin:0;margin-top: 20px;margin-bottom: 20px;">Please complete the following two steps to get started!</p>
+    <p style="color:#777;line-height:150%;font-size: 20px;margin:0;margin-bottom: 20px;">Step 1: Create your account to manage your Vital-Side subscriptions here: <a href="https://vital-side.com/account" style="font-size:20px;" target="_blank">My Account</a> </p>
+    <p style="color:#777;line-height:150%;font-size: 20px;margin:0">Step 2: Create your login to access your Vital-Side courses here.</p>
+    {% if MN_ELEVATE != '' %}
+        <p style="color:#777;line-height:150%;font-size: 20px;margin:0"><a href="{{MN_ELEVATE}}" style="font-size:20px;" target="_blank">ELEVATE Brain Retraining 2.0 Subscription</a>
+    {% endif %}
+    {% if MN_Regulation != '' %}
+        <p style="color:#777;line-height:150%;font-size: 20px;margin:0"><a href="{{MN_Regulation}}" style="font-size:20px;" target="_blank">Reset, A 7-Day Brain Retraining Course Subscription</a>
+    {% endif %}
+    {% if MN_Reset != '' %}
+        <p style="color:#777;line-height:150%;font-size: 20px;margin:0"><a href="{{MN_Reset}}" style="font-size:20px;" target="_blank">Reset, A 7-Day Brain Retraining Course Subscription</a>
+    {% endif %}
+    {% if MN_Rewire != '' %}
+        <p style="color:#777;line-height:150%;font-size: 20px;margin:0"><a href="{{MN_Rewire}}" style="font-size:20px;" target="_blank">Rewire, The Vital-Side Membership Subscription</a>
+    {% endif %}
+    {% if MN_VitalSide != '' %}
+        <p style="color:#777;line-height:150%;font-size: 20px;margin:0"><a href="{{MN_VitalSide}}" style="font-size:20px;" target="_blank">Vital-Side Ed Subscription</a>
+    {% endif %}
+    {% if MN_Reboot != '' %}
+        <p style="color:#777;line-height:150%;font-size: 20px;margin:0"><a href="{{MN_Reboot}}" style="font-size:20px;" target="_blank">Reboot Subscription</a>
+    {% endif %}
 {% endif %}
